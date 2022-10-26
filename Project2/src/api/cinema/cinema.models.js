@@ -8,7 +8,8 @@ const cinemaSchema = new Schema(
         name: { type: String, required: true },
         location: { type: String, required: true },
         movies: [{ type: mongoose.Types.ObjectId, ref: Movie}]
-        // movies: [{ type: mongoose.Types.ObjectId, ref: 'movies'}]
+        // movies: [{ type: mongoose.Types.ObjectId, ref: 'movies'}] así es lo correcto, referenciando el nombre de la
+        //colecci´´on en minúscula y singular
 
     },
     {
