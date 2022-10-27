@@ -2,6 +2,7 @@ const express = require("express");
 const Movie = require("./movies.model");
 const router = express.Router();
 
+//FUNCIÓN QUE RECOGE TODAS LAS PELÍCULAS
 router.get("/", async (req, res) => {
   try {
     const allMovies = await Movie.find();
