@@ -2,7 +2,7 @@ const express = require("express");
 const Movie = require("./movies.model");
 const router = express.Router();
 
-//FUNCIÓN QUE RECOGE TODAS LAS PELÍCULAS
+
 router.get("/", async (req, res) => {
   try {
     const allMovies = await Movie.find();
@@ -51,6 +51,20 @@ router.get("/year/:year", async (req, res) => {
       return res.status(500).json(error);
     }
   });
+
+  router.post('/create', async (req, res) => {
+    try {
+      const movie = req.body;
+      const newMovie= new Movie(movie);
+      const created = await newMovie.save();
+      return res.status(201).json(created);
+    } catch (error) {
+      return res.status(500).json(error);
+      
+    }
+  });
+  
+  
 
 
 module.exports = router;

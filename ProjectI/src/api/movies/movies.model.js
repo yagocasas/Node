@@ -10,7 +10,7 @@ const movieSchema = new Schema
     genre: {
       type: String,
       required: true,
-      enum: ["Comedia romantica", "Ciencia ficcion", "Animacion", "Accion"],
+      enum: ["Comedia romantica", "Ciencia ficcion", "Animacion", "Accion", "Drama"],
     },
     img: { type: String, default: "https://cdn.dribbble.com/users/2264632/screenshots/6708631/final.gif"}
   },
